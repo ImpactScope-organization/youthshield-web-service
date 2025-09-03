@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Theme } from '@radix-ui/themes'
 import { Provider } from '@/app/providers/ReactQueryProvider'
+import { ReactNode } from 'react'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <html lang="en">
