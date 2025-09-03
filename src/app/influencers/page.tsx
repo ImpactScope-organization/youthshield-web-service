@@ -1,4 +1,4 @@
-import { Flex, Container, Heading, Grid } from '@radix-ui/themes'
+import { Flex, Heading, Grid } from '@radix-ui/themes'
 import { LinkCard } from '@/components/common/LinkCard'
 import { PageContainer } from '@/components/common/PageContainer'
 
