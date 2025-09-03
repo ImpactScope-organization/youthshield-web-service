@@ -8,7 +8,7 @@ export const appRouter = router({
     .input((v) => {
       const schema = z.object({
         name: z.string(),
-        email: z.string().email(),
+        email: z.email(),
         password: z.string()
       })
       const result = schema.safeParse(v)
