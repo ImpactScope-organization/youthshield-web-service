@@ -1,4 +1,4 @@
-import { serverClient } from '@/trpc-client/server-client'
+import { serverClient } from '@/trpc/client/server-client'
 
 export default async () => {
   const user = await serverClient.getUser()

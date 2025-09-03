@@ -1,7 +1,7 @@
 import { router, publicProcedure } from './index'
 import { z } from 'zod'
-import userModel, { TUser } from '@/models/User'
-import dbConnect from '@/db/mongoose'
+import { TUser, UserModel } from '@/models/User'
+import { dbConnect } from '@/db/mongoose'
 
 export const appRouter = router({
   createUser: publicProcedure
@@ -19,7 +19,7 @@ export const appRouter = router({
     })
     .mutation(async (params) => {
       await dbConnect()
-      const user: TUser = await userModel.create({
+      const user: TUser = await UserModel.create({
         ...params.input
       })
 
@@ -30,7 +30,7 @@ export const appRouter = router({
 
   getUser: publicProcedure.query(async () => {
     await dbConnect()
-    const users: TUser[] = await userModel.aggregate([
+    const users: TUser[] = await UserModel.aggregate([
       {
         $project: {
           name: 1,

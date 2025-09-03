@@ -4,7 +4,7 @@ import React, { ReactNode, useState } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { httpBatchLink } from '@trpc/client'
 import superjson from 'superjson'
-import { trpc } from '@/trpc-client/client'
+import { trpc } from '@/trpc/client/client'
 
 const url = 'http://localhost:3000/api/trpc'
 
