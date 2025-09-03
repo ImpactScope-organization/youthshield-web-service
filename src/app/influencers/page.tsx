@@ -1,18 +1,21 @@
 import { Flex, Container, Heading, Grid } from '@radix-ui/themes'
 import { LinkCard } from '@/components/common/LinkCard'
+import { PageContainer } from '@/components/common/PageContainer'
 
 export default () => {
+  const influencers = [{ id: 3 }, { id: 4 }, { id: 33 }, { id: 5 }]
+
   return (
-    <Container className="py-16">
+    <PageContainer>
       <Flex gap="4" direction="column">
         <Heading>Influencers</Heading>
         <Grid gap="4" columns="3">
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
+          {influencers &&
+            influencers.map((influencer) => (
+              <LinkCard key={influencer.id} influencer={influencer} />
+            ))}
         </Grid>
       </Flex>
-    </Container>
+    </PageContainer>
   )
 }
