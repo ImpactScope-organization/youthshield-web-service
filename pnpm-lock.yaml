@@ -14,9 +14,27 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.1.12
         version: 4.1.12
+      '@tanstack/react-query':
+        specifier: ^5.85.9
+        version: 5.85.9(react@19.1.0)
+      '@trpc/client':
+        specifier: ^11.5.0
+        version: 11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)
+      '@trpc/next':
+        specifier: ^11.5.0
+        version: 11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/react-query@11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
+      '@trpc/react-query':
+        specifier: ^11.5.0
+        version: 11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
+      '@trpc/server':
+        specifier: ^11.5.0
+        version: 11.5.0(typescript@5.9.2)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      mongoose:
+        specifier: ^8.18.0
+        version: 8.18.0
       next:
         specifier: 15.5.2
         version: 15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -32,9 +50,15 @@ importers:
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+      superjson:
+        specifier: ^2.2.2
+        version: 2.2.2
       tailwindcss:
         specifier: ^4.1.12
         version: 4.1.12
+      zod:
+        specifier: ^4.1.5
+        version: 4.1.5
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -214,6 +238,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@mongodb-js/saslprep@1.3.0':
+    resolution: {integrity: sha512-zlayKCsIjYb7/IdfqxorK5+xUMyi4vOKcFy10wKJYc63NSdKI8mNME+uJqfatkPmOSMMUiojrL58IePKBm3gvQ==}
 
   '@next/env@15.5.2':
     resolution: {integrity: sha512-Qe06ew4zt12LeO6N7j8/nULSOe3fMXE4dM6xgpBQNvdzyK1sv5y4oAP3bq4LamrvGCZtmRYnW8URFCeX5nFgGg==}
@@ -1063,6 +1090,52 @@ packages:
   '@tailwindcss/postcss@4.1.12':
     resolution: {integrity: sha512-5PpLYhCAwf9SJEeIsSmCDLgyVfdBhdBpzX1OJ87anT9IVR0Z9pjM0FNixCAUAHGnMBGB8K99SwAheXrT0Kh6QQ==}
 
+  '@tanstack/query-core@5.85.9':
+    resolution: {integrity: sha512-5fxb9vwyftYE6KFLhhhDyLr8NO75+Wpu7pmTo+TkwKmMX2oxZDoLwcqGP8ItKSpUMwk3urWgQDZfyWr5Jm9LsQ==}
+
+  '@tanstack/react-query@5.85.9':
+    resolution: {integrity: sha512-2T5zgSpcOZXGkH/UObIbIkGmUPQqZqn7esVQFXLOze622h4spgWf5jmvrqAo9dnI13/hyMcNsF1jsoDcb59nJQ==}
+    peerDependencies:
+      react: ^18 || ^19
+
+  '@trpc/client@11.5.0':
+    resolution: {integrity: sha512-32oH+KOAdo73jJKjU9tyG+vCjID6A28NgXwUNr691O5HjpF5yyTX51Zzyee8YtGzU89Nw/drCHdfA4gD7BN2eg==}
+    peerDependencies:
+      '@trpc/server': 11.5.0
+      typescript: '>=5.7.2'
+
+  '@trpc/next@11.5.0':
+    resolution: {integrity: sha512-HTs3HiJWoW8P0LHlPjAXrJd35UzzvlvSu/DBK/Xx9+NTx7yw729N81QAzn3qSxRZy3sBkEg10LKDrluIZGwgDQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.59.15
+      '@trpc/client': 11.5.0
+      '@trpc/react-query': 11.5.0
+      '@trpc/server': 11.5.0
+      next: '*'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      typescript: '>=5.7.2'
+    peerDependenciesMeta:
+      '@tanstack/react-query':
+        optional: true
+      '@trpc/react-query':
+        optional: true
+
+  '@trpc/react-query@11.5.0':
+    resolution: {integrity: sha512-BPrMbYi5/oW11SSRUmD3dONCAG/JJjxfniSyFbsY5VSS6qHXDF1RcfLAkiF+Ofo7MPchqmHc2iNqSl5Eumh8iA==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.80.3
+      '@trpc/client': 11.5.0
+      '@trpc/server': 11.5.0
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
+      typescript: '>=5.7.2'
+
+  '@trpc/server@11.5.0':
+    resolution: {integrity: sha512-0IBtkmUCeO2ycn4K45/cqsujnlCQrSvkCo7lFDpg3kGMIPiLyLRciID5IiS7prEjRjeITa+od2aaHTIwONApVw==}
+    peerDependencies:
+      typescript: '>=5.7.2'
+
   '@types/node@20.19.11':
     resolution: {integrity: sha512-uug3FEEGv0r+jrecvUUpbY8lLisvIjg6AAic6a2bSP5OEOLeJsDSnvhCDov7ipFFMXS3orMpzlmi0ZcuGkBbow==}
 
@@ -1074,9 +1147,19 @@ packages:
   '@types/react@19.1.12':
     resolution: {integrity: sha512-cMoR+FoAf/Jyq6+Df2/Z41jISvGZZ2eTlnsaJRptmZ76Caldwy1odD4xTr/gNV9VLj0AWgg/nmkevIyUfIIq5w==}
 
+  '@types/webidl-conversions@7.0.3':
+    resolution: {integrity: sha512-CiJJvcRtIgzadHCYXw7dqEnMNRjhGZlYK05Mj9OyktqV8uVT8fD2BFOB7S1uwBE3Kj2Z+4UyPmFw/Ixgw/LAlA==}
+
+  '@types/whatwg-url@11.0.5':
+    resolution: {integrity: sha512-coYR071JRaHa+xoEvvYqvnIHaVqaYrLPbsufM9BF63HkwI5Lgmy2QR8Q5K/lYDYo5AK82wOvSOS0UsLTpTG7uQ==}
+
   aria-hidden@1.2.6:
     resolution: {integrity: sha512-ik3ZgC9dY/lYVVM++OISsaYDeg1tb0VtP5uL3ouh1koGOaUMDPpbFIei4JkFimWUFPn90sbMNMXQAIVOlnYKJA==}
     engines: {node: '>=10'}
+
+  bson@6.10.4:
+    resolution: {integrity: sha512-WIsKqkSC0ABoBJuT1LEX+2HEvNmNKKgnTAyd0fL8qzK4SH2i9NXg+t08YtdZp/V9IZ33cxe3iV4yM0qg8lMQng==}
+    engines: {node: '>=16.20.1'}
 
   caniuse-lite@1.0.30001739:
     resolution: {integrity: sha512-y+j60d6ulelrNSwpPyrHdl+9mJnQzHBr08xm48Qno0nSk4h3Qojh+ziv2qE6rXf4k3tadF4o1J/1tAbVm1NtnA==}
@@ -1109,8 +1192,21 @@ packages:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
 
+  copy-anything@3.0.5:
+    resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
+    engines: {node: '>=12.13'}
+
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
+  debug@4.4.1:
+    resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
 
   detect-libc@2.0.4:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
@@ -1133,9 +1229,17 @@ packages:
   is-arrayish@0.3.2:
     resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
 
+  is-what@4.1.16:
+    resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
+    engines: {node: '>=12.13'}
+
   jiti@2.5.1:
     resolution: {integrity: sha512-twQoecYPiVA5K/h6SxtORw/Bs3ar+mLUtoPSc7iMXzQzK8d7eJ/R09wmTwAjiamETn1cXYPGfNnu7DMoHgu12w==}
     hasBin: true
+
+  kareem@2.6.3:
+    resolution: {integrity: sha512-C3iHfuGUXK2u8/ipq9LfjFfXFxAZMQJJq7vLS45r3D9Y2xQ/m4S8zaR4zMLFWh9AsNPXmcFfUDhTEO8UIC/V6Q==}
+    engines: {node: '>=12.0.0'}
 
   lightningcss-darwin-arm64@1.30.1:
     resolution: {integrity: sha512-c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==}
@@ -1204,6 +1308,9 @@ packages:
   magic-string@0.30.18:
     resolution: {integrity: sha512-yi8swmWbO17qHhwIBNeeZxTceJMeBvWJaId6dyvTSOwTipqeHhMhOrz6513r1sOKnpvQ7zkhlG8tPrpilwTxHQ==}
 
+  memory-pager@1.5.0:
+    resolution: {integrity: sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg==}
+
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -1216,6 +1323,51 @@ packages:
     resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
     engines: {node: '>=10'}
     hasBin: true
+
+  mongodb-connection-string-url@3.0.2:
+    resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
+
+  mongodb@6.18.0:
+    resolution: {integrity: sha512-fO5ttN9VC8P0F5fqtQmclAkgXZxbIkYRTUi1j8JO6IYwvamkhtYDilJr35jOPELR49zqCJgXZWwCtW7B+TM8vQ==}
+    engines: {node: '>=16.20.1'}
+    peerDependencies:
+      '@aws-sdk/credential-providers': ^3.188.0
+      '@mongodb-js/zstd': ^1.1.0 || ^2.0.0
+      gcp-metadata: ^5.2.0
+      kerberos: ^2.0.1
+      mongodb-client-encryption: '>=6.0.0 <7'
+      snappy: ^7.2.2
+      socks: ^2.7.1
+    peerDependenciesMeta:
+      '@aws-sdk/credential-providers':
+        optional: true
+      '@mongodb-js/zstd':
+        optional: true
+      gcp-metadata:
+        optional: true
+      kerberos:
+        optional: true
+      mongodb-client-encryption:
+        optional: true
+      snappy:
+        optional: true
+      socks:
+        optional: true
+
+  mongoose@8.18.0:
+    resolution: {integrity: sha512-3TixPihQKBdyaYDeJqRjzgb86KbilEH07JmzV8SoSjgoskNTpa6oTBmDxeoF9p8YnWQoz7shnCyPkSV/48y3yw==}
+    engines: {node: '>=16.20.1'}
+
+  mpath@0.9.0:
+    resolution: {integrity: sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==}
+    engines: {node: '>=4.0.0'}
+
+  mquery@5.0.0:
+    resolution: {integrity: sha512-iQMncpmEK8R8ncT8HJGsGc9Dsp8xcgYMVSbs5jgnm1lFHTZqMJTUWTDx1LBO8+mK3tPNZWFLBghQEIOULSTHZg==}
+    engines: {node: '>=14.0.0'}
+
+  ms@2.1.3:
+    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
@@ -1258,6 +1410,10 @@ packages:
     resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
+
+  punycode@2.3.1:
+    resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
+    engines: {node: '>=6'}
 
   radix-ui@1.4.3:
     resolution: {integrity: sha512-aWizCQiyeAenIdUbqEpXgRA1ya65P13NKn/W8rWkcN0OPkRDxdBVLWnIEDsS2RpwCK2nobI7oMUSmexzTDyAmA==}
@@ -1323,12 +1479,18 @@ packages:
     resolution: {integrity: sha512-eX2IQ6nFohW4DbvHIOLRB3MHFpYqaqvXd3Tp5e/T/dSH83fxaNJQRvDMhASmkNTsNTVF2/OOopzRCt7xokgPfg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
 
+  sift@17.1.3:
+    resolution: {integrity: sha512-Rtlj66/b0ICeFzYTuNvX/EF1igRbbnGSvEyT79McoZa/DeGhMyC5pWKOEsZKnpkqtSeovd5FL/bjHWC3CIIvCQ==}
+
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
+
+  sparse-bitfield@3.0.3:
+    resolution: {integrity: sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ==}
 
   styled-jsx@5.1.6:
     resolution: {integrity: sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==}
@@ -1343,6 +1505,10 @@ packages:
       babel-plugin-macros:
         optional: true
 
+  superjson@2.2.2:
+    resolution: {integrity: sha512-5JRxVqC8I8NuOUjzBbvVJAKNM8qoVuH0O77h4WInc/qC2q5IreqKxYwgkga3PfA22OayK2ikceb/B26dztPl+Q==}
+    engines: {node: '>=16'}
+
   tailwindcss@4.1.12:
     resolution: {integrity: sha512-DzFtxOi+7NsFf7DBtI3BJsynR+0Yp6etH+nRPTbpWnS2pZBaSksv/JGctNwSWzbFjp0vxSqknaUylseZqMDGrA==}
 
@@ -1352,6 +1518,10 @@ packages:
 
   tar@7.4.3:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
+    engines: {node: '>=18'}
+
+  tr46@5.1.1:
+    resolution: {integrity: sha512-hdF5ZgjTqgAntKkklYw0R03MG2x/bSzTtkxmIRw/sTNV8YXsCJ1tfLAX23lhxhHJlEf3CRCOCGGWw3vI3GaSPw==}
     engines: {node: '>=18'}
 
   tslib@2.8.1:
@@ -1390,9 +1560,20 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+  webidl-conversions@7.0.0:
+    resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
+    engines: {node: '>=12'}
+
+  whatwg-url@14.2.0:
+    resolution: {integrity: sha512-De72GdQZzNTUBBChsXueQUnPKDkg/5A5zp7pFDuQAj5UFoENpiACU0wlCvzpAGnTkj++ihpKwKyYewn/XNUbKw==}
+    engines: {node: '>=18'}
+
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
+
+  zod@4.1.5:
+    resolution: {integrity: sha512-rcUUZqlLJgBC33IT3PNMgsCq6TzLQEG/Ei/KTCU0PedSWRMAXoOUN+4t/0H+Q8bdnLPdqUYnvboJT0bn/229qg==}
 
 snapshots:
 
@@ -1528,6 +1709,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@mongodb-js/saslprep@1.3.0':
+    dependencies:
+      sparse-bitfield: 3.0.3
 
   '@next/env@15.5.2': {}
 
@@ -2392,6 +2577,43 @@ snapshots:
       postcss: 8.5.6
       tailwindcss: 4.1.12
 
+  '@tanstack/query-core@5.85.9': {}
+
+  '@tanstack/react-query@5.85.9(react@19.1.0)':
+    dependencies:
+      '@tanstack/query-core': 5.85.9
+      react: 19.1.0
+
+  '@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)':
+    dependencies:
+      '@trpc/server': 11.5.0(typescript@5.9.2)
+      typescript: 5.9.2
+
+  '@trpc/next@11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/react-query@11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)':
+    dependencies:
+      '@trpc/client': 11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)
+      '@trpc/server': 11.5.0(typescript@5.9.2)
+      next: 15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      typescript: 5.9.2
+    optionalDependencies:
+      '@tanstack/react-query': 5.85.9(react@19.1.0)
+      '@trpc/react-query': 11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
+
+  '@trpc/react-query@11.5.0(@tanstack/react-query@5.85.9(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)':
+    dependencies:
+      '@tanstack/react-query': 5.85.9(react@19.1.0)
+      '@trpc/client': 11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)
+      '@trpc/server': 11.5.0(typescript@5.9.2)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      typescript: 5.9.2
+
+  '@trpc/server@11.5.0(typescript@5.9.2)':
+    dependencies:
+      typescript: 5.9.2
+
   '@types/node@20.19.11':
     dependencies:
       undici-types: 6.21.0
@@ -2404,9 +2626,17 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
+  '@types/webidl-conversions@7.0.3': {}
+
+  '@types/whatwg-url@11.0.5':
+    dependencies:
+      '@types/webidl-conversions': 7.0.3
+
   aria-hidden@1.2.6:
     dependencies:
       tslib: 2.8.1
+
+  bson@6.10.4: {}
 
   caniuse-lite@1.0.30001739: {}
 
@@ -2438,7 +2668,15 @@ snapshots:
       color-string: 1.9.1
     optional: true
 
+  copy-anything@3.0.5:
+    dependencies:
+      is-what: 4.1.16
+
   csstype@3.1.3: {}
+
+  debug@4.4.1:
+    dependencies:
+      ms: 2.1.3
 
   detect-libc@2.0.4: {}
 
@@ -2456,7 +2694,11 @@ snapshots:
   is-arrayish@0.3.2:
     optional: true
 
+  is-what@4.1.16: {}
+
   jiti@2.5.1: {}
+
+  kareem@2.6.3: {}
 
   lightningcss-darwin-arm64@1.30.1:
     optional: true
@@ -2507,6 +2749,8 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  memory-pager@1.5.0: {}
+
   minipass@7.1.2: {}
 
   minizlib@3.0.2:
@@ -2514,6 +2758,46 @@ snapshots:
       minipass: 7.1.2
 
   mkdirp@3.0.1: {}
+
+  mongodb-connection-string-url@3.0.2:
+    dependencies:
+      '@types/whatwg-url': 11.0.5
+      whatwg-url: 14.2.0
+
+  mongodb@6.18.0:
+    dependencies:
+      '@mongodb-js/saslprep': 1.3.0
+      bson: 6.10.4
+      mongodb-connection-string-url: 3.0.2
+
+  mongoose@8.18.0:
+    dependencies:
+      bson: 6.10.4
+      kareem: 2.6.3
+      mongodb: 6.18.0
+      mpath: 0.9.0
+      mquery: 5.0.0
+      ms: 2.1.3
+      sift: 17.1.3
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - socks
+      - supports-color
+
+  mpath@0.9.0: {}
+
+  mquery@5.0.0:
+    dependencies:
+      debug: 4.4.1
+    transitivePeerDependencies:
+      - supports-color
+
+  ms@2.1.3: {}
 
   nanoid@3.3.11: {}
 
@@ -2555,6 +2839,8 @@ snapshots:
       source-map-js: 1.2.1
 
   prettier@3.6.2: {}
+
+  punycode@2.3.1: {}
 
   radix-ui@1.4.3(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
@@ -2688,6 +2974,8 @@ snapshots:
       '@img/sharp-win32-x64': 0.34.3
     optional: true
 
+  sift@17.1.3: {}
+
   simple-swizzle@0.2.2:
     dependencies:
       is-arrayish: 0.3.2
@@ -2695,10 +2983,18 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
+  sparse-bitfield@3.0.3:
+    dependencies:
+      memory-pager: 1.5.0
+
   styled-jsx@5.1.6(react@19.1.0):
     dependencies:
       client-only: 0.0.1
       react: 19.1.0
+
+  superjson@2.2.2:
+    dependencies:
+      copy-anything: 3.0.5
 
   tailwindcss@4.1.12: {}
 
@@ -2712,6 +3008,10 @@ snapshots:
       minizlib: 3.0.2
       mkdirp: 3.0.1
       yallist: 5.0.0
+
+  tr46@5.1.1:
+    dependencies:
+      punycode: 2.3.1
 
   tslib@2.8.1: {}
 
@@ -2738,4 +3038,13 @@ snapshots:
     dependencies:
       react: 19.1.0
 
+  webidl-conversions@7.0.0: {}
+
+  whatwg-url@14.2.0:
+    dependencies:
+      tr46: 5.1.1
+      webidl-conversions: 7.0.0
+
   yallist@5.0.0: {}
+
+  zod@4.1.5: {}

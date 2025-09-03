@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Theme } from '@radix-ui/themes'
+import { Provider } from '@/app/providers/ReactQueryProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Theme appearance="dark">{children}</Theme>
+        <Provider>
+          <Theme appearance="dark">{children}</Theme>
+        </Provider>
       </body>
     </html>
   )
