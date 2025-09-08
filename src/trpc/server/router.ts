@@ -2,6 +2,7 @@ import { router, publicProcedure } from './index'
 import { z } from 'zod'
 import { TUser, UserModel } from '@/models/User'
 import { dbConnect } from '@/db/mongoose'
+import { InfluencerModel, TInfluencer } from '@/models/Influencer'
 
 export const appRouter = router({
   createUser: publicProcedure
@@ -42,6 +43,22 @@ export const appRouter = router({
       }
     ])
     return users
+  }),
+
+  getInfluencers: publicProcedure.query(async () => {
+    await dbConnect()
+    const influencers: TInfluencer[] = await InfluencerModel.aggregate([
+      {
+        $project: {
+          facebookURL: 1,
+          name: 1,
+          followers: 1,
+          avatar: 1,
+          _id: { $toString: '$_id' }
+        }
+      }
+    ])
+    return influencers
   })
 })
 

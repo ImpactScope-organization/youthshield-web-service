@@ -1,7 +1,26 @@
-import { serverClient } from '@/trpc/client/server-client'
+import { Flex, Heading, Grid } from '@radix-ui/themes'
+import { LinkCard } from '@/components/common/LinkCard'
+import { PageContainer } from '@/components/common/PageContainer'
+import { appRouter } from '@/trpc/server/router'
 
 export default async () => {
-  const user = await serverClient.getUser()
+  const influencersd = await appRouter.getInfluencers()
 
-  return <div>hello {user[0].name}</div>
+  console.log(influencersd)
+
+  const influencers = []
+
+  return (
+    <PageContainer>
+      <Flex gap="4" direction="column">
+        <Heading>Influencers</Heading>
+        <Grid gap="4" columns="3">
+          {influencers &&
+            influencers.map((influencer) => (
+              <LinkCard key={influencer.id} influencer={influencer} />
+            ))}
+        </Grid>
+      </Flex>
+    </PageContainer>
+  )
 }
