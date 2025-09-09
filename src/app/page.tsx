@@ -2,13 +2,10 @@ import { Flex, Heading, Grid } from '@radix-ui/themes'
 import { LinkCard } from '@/components/common/LinkCard'
 import { PageContainer } from '@/components/common/PageContainer'
 import { appRouter } from '@/trpc/server/router'
+import { serverClient } from '@/trpc/client/server-client'
 
 export default async () => {
-  const influencersd = await appRouter.getInfluencers()
-
-  console.log(influencersd)
-
-  const influencers = []
+  const influencers = await serverClient.getInfluencers()
 
   return (
     <PageContainer>
@@ -17,7 +14,7 @@ export default async () => {
         <Grid gap="4" columns="3">
           {influencers &&
             influencers.map((influencer) => (
-              <LinkCard key={influencer.id} influencer={influencer} />
+              <LinkCard key={influencer._id} influencer={influencer} />
             ))}
         </Grid>
       </Flex>
