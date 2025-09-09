@@ -3,7 +3,7 @@ import { dbConnect } from '@/db/mongoose'
 import { InfluencerModel, TInfluencer } from '@/models/Influencer'
 
 export const influencers = {
-  getInfluencers: publicProcedure.query(async () => {
+  all: publicProcedure.query(async () => {
     await dbConnect()
     const influencers: TInfluencer[] = await InfluencerModel.aggregate([
       {

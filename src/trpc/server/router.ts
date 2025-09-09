@@ -2,7 +2,6 @@ import { router, publicProcedure } from './index'
 import { z } from 'zod'
 import { TUser, UserModel } from '@/models/User'
 import { dbConnect } from '@/db/mongoose'
-import { InfluencerModel, TInfluencer } from '@/models/Influencer'
 import { influencers } from '@/trpc/server/queries/influencers'
 
 export const appRouter = router({
