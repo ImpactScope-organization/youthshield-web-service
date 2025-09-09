@@ -17,5 +17,18 @@ export const influencerPosts = {
       }).select(['_id', 'text'])
 
       return influencerPosts
+    }),
+  getById: publicProcedure
+    .input(
+      z.object({
+        id: z.string()
+      })
+    )
+    .query(async (opts) => {
+      await dbConnect()
+      const influencerPost: InfluencerPost | null = await InfluencerPostModel.findById(
+        opts.input.id
+      )
+      return influencerPost
     })
 }
