@@ -5,7 +5,7 @@ import { appRouter } from '@/trpc/server/router'
 import { serverClient } from '@/trpc/client/server-client'
 
 export default async () => {
-  const influencers = await serverClient.getInfluencers()
+  const influencers = await serverClient.influencers.getInfluencers()
 
   return (
     <PageContainer>
