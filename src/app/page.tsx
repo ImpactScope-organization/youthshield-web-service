@@ -1,7 +1,6 @@
 import { Flex, Heading, Grid } from '@radix-ui/themes'
 import { LinkCard } from '@/components/common/LinkCard'
 import { PageContainer } from '@/components/common/PageContainer'
-import { appRouter } from '@/trpc/server/router'
 import { serverClient } from '@/trpc/client/server-client'
 
 export default async () => {
