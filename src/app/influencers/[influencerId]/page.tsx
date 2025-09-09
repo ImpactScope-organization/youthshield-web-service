@@ -2,6 +2,7 @@ import { PageContainer } from '@/components/common/PageContainer'
 import { serverClient } from '@/trpc/client/server-client'
 import { Flex, Grid, Heading } from '@radix-ui/themes'
 import { LinkCard } from '@/components/common/LinkCard'
+import { FileTextIcon, ImageIcon, VideoIcon } from '@radix-ui/react-icons'
 
 type Props = {
   params: Promise<{ influencerId: string }>
@@ -20,15 +21,26 @@ export default async ({ params }: Props) => {
         </Heading>
         <Grid gap="4" columns="3">
           {misleadingPosts &&
-            misleadingPosts.map((misleadingPost) => (
-              <LinkCard
-                key={misleadingPost._id}
-                to={`/influencers/${influencer._id}/posts/${misleadingPost._id}`}
-                avatarUrl={influencer.avatar}
-                title={influencer.name}
-                description={misleadingPost.text.original}
-              />
-            ))}
+            misleadingPosts.map((misleadingPost) => {
+              const icon =
+                misleadingPost?.type === 'video' ? (
+                  <VideoIcon />
+                ) : misleadingPost?.type === 'photo' ? (
+                  <ImageIcon />
+                ) : (
+                  <FileTextIcon />
+                )
+              return (
+                <LinkCard
+                  key={misleadingPost._id}
+                  to={`/influencers/${influencer._id}/posts/${misleadingPost._id}`}
+                  avatarUrl={influencer.avatar}
+                  title={influencer.name}
+                  icon={icon}
+                  description={misleadingPost.text.original}
+                />
+              )
+            })}
         </Grid>
       </Flex>
     </PageContainer>
