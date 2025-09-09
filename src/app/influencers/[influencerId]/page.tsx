@@ -12,6 +12,10 @@ export default async ({ params }: Props) => {
   const influencer = await serverClient.influencers.get({ id: influencerId })
   const misleadingPosts = await serverClient.influencerPosts.getByInfluencerId({ influencerId })
 
+  if (!influencer) {
+    throw new Error('no influencer found')
+  }
+
   return (
     <PageContainer>
       <Flex gap="4" direction="column">
@@ -32,7 +36,7 @@ export default async ({ params }: Props) => {
                 )
               return (
                 <LinkCard
-                  key={misleadingPost._id}
+                  key={misleadingPost._id as string}
                   to={`/influencers/${influencer._id}/posts/${misleadingPost._id}`}
                   avatarUrl={influencer.avatar}
                   title={influencer.name}
