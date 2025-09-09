@@ -1,10 +1,27 @@
 import { PageContainer } from '@/components/common/PageContainer'
 import { serverClient } from '@/trpc/client/server-client'
+import { Flex, Grid, Heading } from '@radix-ui/themes'
+import { LinkCard } from '@/components/common/LinkCard'
+import { influencerPosts } from '@/trpc/server/queries/influencerPosts'
 
 type Props = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
-export default async ({ params: { id } }: Props) => {
+export default async ({ params }: Props) => {
+  const { id } = await params
   const influencer = await serverClient.influencers.get({ id })
-  return <PageContainer>{influencer?.name}</PageContainer>
+  const misleadingPosts = await serverClient.influencerPosts.getByInfluencerId({ influencerId: id })
+
+  console.log(misleadingPosts)
+  return (
+    <PageContainer>
+      <Flex gap="4" direction="column">
+        <Heading>{influencer?.name}</Heading>
+        <Heading size="4" as="h3">
+          Misleading posts
+        </Heading>
+        <Grid gap="4" columns="3"></Grid>
+      </Flex>
+    </PageContainer>
+  )
 }

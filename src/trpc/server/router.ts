@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { TUser, UserModel } from '@/models/User'
 import { dbConnect } from '@/db/mongoose'
 import { influencers } from '@/trpc/server/queries/influencers'
+import { influencerPosts } from '@/trpc/server/queries/influencerPosts'
 
 export const appRouter = router({
   createUser: publicProcedure
@@ -45,7 +46,8 @@ export const appRouter = router({
     return users
   }),
 
-  influencers
+  influencers,
+  influencerPosts
 })
 
 export type AppRouter = typeof appRouter
