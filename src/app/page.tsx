@@ -14,7 +14,13 @@ export default async () => {
         <Grid gap="4" columns="3">
           {influencers &&
             influencers.map((influencer) => (
-              <LinkCard key={influencer._id} influencer={influencer} />
+              <LinkCard
+                key={influencer._id}
+                to={`/influencers/${influencer._id}`}
+                avatarUrl={influencer.avatar}
+                title={influencer.name}
+                description={`${influencer.followers.toLocaleString()} followers`}
+              />
             ))}
         </Grid>
       </Flex>

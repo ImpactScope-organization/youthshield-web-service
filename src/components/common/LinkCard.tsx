@@ -1,27 +1,24 @@
 import { Avatar, Box, Card, Flex, Heading, Text } from '@radix-ui/themes'
 import Link from 'next/link'
-import { TInfluencer } from '@/models/Influencer'
 
 interface LinkCardProps {
-  influencer: TInfluencer
+  to: string
+  avatarUrl?: string
+  title: string
+  description: string
 }
 
-export const LinkCard = ({ influencer }: LinkCardProps) => {
+export const LinkCard = ({ to, avatarUrl, title, description }: LinkCardProps) => {
   return (
-    <Link href={`/influencers/${influencer._id}`}>
+    <Link href={to}>
       <Box width="100%">
         <Card>
           <Flex gap="3" align="center">
-            <Avatar
-              size="3"
-              src={influencer.avatar}
-              radius="full"
-              fallback="T"
-            />
+            {avatarUrl && <Avatar size="3" src={avatarUrl} radius="full" fallback="T" />}
             <Box>
-              <Heading>{influencer.name}</Heading>
+              <Heading>{title}</Heading>
               <Text as="p" size="2" color="gray">
-                {influencer.followers.toLocaleString()} followers
+                {description}
               </Text>
             </Box>
           </Flex>
