@@ -14,7 +14,7 @@ export const influencerPosts = {
       await dbConnect()
       const influencerPosts: InfluencerPost[] = await InfluencerPostModel.find({
         influencerId: opts.input.influencerId
-      }).select('_id')
+      }).select(['_id', 'text'])
 
       return influencerPosts
     })

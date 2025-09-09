@@ -20,7 +20,18 @@ export default async ({ params }: Props) => {
         <Heading size="4" as="h3">
           Misleading posts
         </Heading>
-        <Grid gap="4" columns="3"></Grid>
+        <Grid gap="4" columns="3">
+          {misleadingPosts &&
+            misleadingPosts.map((misleadingPost) => (
+              <LinkCard
+                key={misleadingPost._id}
+                to={`/influencers/${influencer._id}/posts/${misleadingPost._id}`}
+                avatarUrl={influencer.avatar}
+                title={influencer.name}
+                description={misleadingPost.text.original}
+              />
+            ))}
+        </Grid>
       </Flex>
     </PageContainer>
   )
