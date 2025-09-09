@@ -23,4 +23,4 @@ const InfluencerSchema = new mongoose.Schema<Influencer>({
 })
 
 export const InfluencerModel =
-  mongoose.models.Influencer || mongoose.model<Influencer>('influencers', InfluencerSchema)
+  mongoose.models.Influencer || mongoose.model<Influencer>('Influencer', InfluencerSchema)

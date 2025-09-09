@@ -1,13 +1,13 @@
 import { Avatar, Box, Card, Flex, Heading, Text } from '@radix-ui/themes'
 import Link from 'next/link'
-import React from 'react'
+import { ReactNode } from 'react'
 
 interface LinkCardProps {
   to: string
   avatarUrl?: string
   title: string
   description: string
-  icon?: React.ReactNode
+  icon?: ReactNode
 }
 
 export const LinkCard = ({ to, avatarUrl, title, description, icon }: LinkCardProps) => {

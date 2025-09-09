@@ -83,9 +83,9 @@ const InfluencerPostSchema = new Schema<InfluencerPost>(
     isPrivate: { type: Boolean, required: true },
     analysis: { type: AnalysisSchema, required: true }
   },
-  { timestamps: true }
+  { timestamps: true, collection: 'influencer_posts' }
 )
 
 export const InfluencerPostModel =
   mongoose.models.InfluencerPost ||
-  mongoose.model<InfluencerPost>('influencer_posts', InfluencerPostSchema)
+  mongoose.model<InfluencerPost>('InfluencerPost', InfluencerPostSchema)
