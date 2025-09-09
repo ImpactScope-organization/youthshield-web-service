@@ -19,11 +19,15 @@ export const influencers = {
     ])
     return influencers
   }),
-  get: publicProcedure.input(z.object({
-    id: z.string()
-  })).query(async (opts) => {
-    await dbConnect()
-    const influencer: TInfluencer | null = await InfluencerModel.findById(opts.input.id)
-    return influencer
-  }),
+  get: publicProcedure
+    .input(
+      z.object({
+        id: z.string()
+      })
+    )
+    .query(async (opts) => {
+      await dbConnect()
+      const influencer: TInfluencer | null = await InfluencerModel.findById(opts.input.id)
+      return influencer
+    })
 }
